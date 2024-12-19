@@ -68,6 +68,15 @@ img {
   max-width: 100%;
   height: auto;
 }
+/* placeholder */
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder,
+:-moz-placeholder{
+  color: rgba( 52, 49, 61);
+  opacity: 1;
+}
+
 
 
 /* CONTAINER  */
@@ -79,6 +88,19 @@ img {
   margin-left: auto;
   margin-right: auto;
 }
+/* VISSUALY-HIDDEN  */
+.visuallyhidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+
 /* BUTTON  */
 .button {
   display: inline-block;
@@ -93,6 +115,7 @@ img {
   text-align: center;
   text-decoration: none;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .button:hover {
@@ -119,6 +142,7 @@ opacity: 0.6;
 }
 .button--rectangle-big {
   border-radius: 10px;
+
 }
 
 /* MAIN-CONTENT */
@@ -226,4 +250,66 @@ background-position: left calc(50% + 476px) top 30px;
   margin-bottom: 38px;
   font-size: 22px;
   line-height: 36px;
+}
+/* index-url-form-shortener-wrapper */
+.index-url-form-shortener-wrapper {
+display: flex;
+flex-direction: column;
+background-color: var(--light-bg);
+}
+.index-url-form-shortener-wrapper__url-form-shortener {
+  margin-top: -84px;
+  margin-bottom: 120px;
+}
+
+/* URL-SHORTENER  */
+
+.url-shortener__form {
+  display: flex;
+  padding: 52px 64px;
+  border-radius: 10px;
+  background-color: #4b3f6b;
+  background-image: url(../img/Path\ 2.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.url-shortener__input-weapper {
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  margin-right: 24px;
+}
+.url-shortener__input {
+  flex-grow: 1;
+  display: block;
+  width: 100%;
+  padding: 14px 37px;
+  border: 3px solid transparent;
+  border-radius: 10px;
+  color: var(--heading-color);
+  font-size: 20px;
+  line-height: 36px;
+}
+
+.url-shortener__input:not(:focus):not(:placeholder-shown):invalid {
+  border-color: var(--error-color);
+  color: var(--error-color);
+  }
+
+.url-shortener__error-msg {
+  display: none;
+}
+
+.url-shortener__input:not(:focus):not(:placeholder-shown):invalid ~ .url-shortener__error-msg {
+display: block;
+position: absolute;
+left: 0;
+top: calc(100% + 8px);
+font-size: 16px;
+line-height: 18px;
+font-weight: 500;
+font-style: italic;
+color: var(--error-color);
+letter-spacing: 0.11px;
 }
